@@ -17,8 +17,8 @@ import java.sql.Statement;
 public class SingletonConnect{
     public static void connect(){
       try{
-          Class.forName("org.dslite.JDCB").newInstance();
-          Connection cnx = DriverManager.getConnection("jdbc:sqlite:nomBD.sqlite/");
+          Class.forName("org.sqlite.JDCB").newInstance();
+          Connection cnx = DriverManager.getConnection("jdcb:sqlite:baseTest.sqlite");
           Statement lien=cnx.createStatement();
       } 
       catch(Exception e){

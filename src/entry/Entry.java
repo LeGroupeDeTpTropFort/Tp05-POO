@@ -5,6 +5,8 @@
  */
 package entry;
 
+import com.connexion.SingletonConnect;
+
 /**
  *
  * @author p1703136
@@ -15,7 +17,10 @@ public class Entry {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // TODO Test database connection
+        
+        SingletonConnect sg = new SingletonConnect();
+        
     }
     
 }
