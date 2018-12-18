@@ -6,6 +6,10 @@
 package entry;
 
 import com.connexion.SingletonConnect;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -20,8 +24,16 @@ public class Entry {
         // TODO Test database connection
         
         SingletonConnect sg = new SingletonConnect("baseComposite");
-        sg.select("id, prenom, nom","etudiants");
-      
+        ResultSet resultats = sg.select("id, prenom, nom","etudiants");
+        
+        try {
+            while(resultats.next()){
+                System.out.println(resultats.getString("prenom"));
+                System.out.println(resultats.getString("nom"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Entry.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }

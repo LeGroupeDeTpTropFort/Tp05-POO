@@ -35,17 +35,14 @@ public class SingletonConnect{
           System.out.println(e.toString());
       }
     }
-    public void select(String Request, String nomTable){
+    public ResultSet select(String Request, String nomTable){
         try{
             ResultSet result = lien.executeQuery("select "+Request+" from "+nomTable); 
-            while(result.next()){
-                System.out.println(result.getString("prenom"));
-                System.out.println(result.getString("nom"));
-                System.out.println(result.getString("id"));
-            }
+            return result;
         }
         catch(Exception e){
             System.out.println(e.toString());
+            return null;
         }
     }
 }
