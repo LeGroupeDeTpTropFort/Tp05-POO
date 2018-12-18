@@ -19,7 +19,8 @@ public class Entry {
     public static void main(String[] args) {
         // TODO Test database connection
         
-        SingletonConnect sg = new SingletonConnect();
+        SingletonConnect sg = new SingletonConnect("baseComposite");
+        sg.select("id, prenom, nom","etudiants");
       
     }
     

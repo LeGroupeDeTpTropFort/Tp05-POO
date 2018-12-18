@@ -8,6 +8,7 @@ package com.connexion;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 /**
@@ -15,20 +16,36 @@ import java.sql.Statement;
  * @author p1703136
  */
 public class SingletonConnect{
-    
-    public SingletonConnect(){ 
-        connect();
+    Connection cnx;
+    Statement lien;
+    String nomDB;
+    public SingletonConnect(String nomDB){
+        this.nomDB = nomDB;
+        connect(nomDB);
     }
-    public void connect(){
+    public void connect(String path){
       try{
           
           Class.forName("org.sqlite.JDBC").newInstance();
-          Connection cnx = DriverManager.getConnection("jdbc:sqlite:../../baseTest.sqlite");
-          Statement lien=cnx.createStatement();
+          this.cnx = DriverManager.getConnection("jdbc:sqlite:"+path+".sqlite");
+          this.lien = this.cnx.createStatement();
           System.out.println("reussite");
       } 
       catch(Exception e){
           System.out.println(e.toString());
       }
+    }
+    public void select(String Request, String nomTable){
+        try{
+            ResultSet result = lien.executeQuery("select "+Request+" from "+nomTable); 
+            while(result.next()){
+                System.out.println(result.getString("prenom"));
+                System.out.println(result.getString("nom"));
+                System.out.println(result.getString("id"));
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.toString());
+        }
     }
 }
