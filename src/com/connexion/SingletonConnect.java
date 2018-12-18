@@ -23,7 +23,7 @@ public class SingletonConnect{
       try{
           
           Class.forName("org.sqlite.JDBC").newInstance();
-          Connection cnx = DriverManager.getConnection("baseTest.sqlite");
+          Connection cnx = DriverManager.getConnection("jdbc:sqlite:../../baseTest.sqlite");
           Statement lien=cnx.createStatement();
           System.out.println("reussite");
       } 
