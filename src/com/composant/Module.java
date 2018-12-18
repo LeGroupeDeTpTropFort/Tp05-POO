@@ -29,4 +29,18 @@ public class Module extends Composant {
     public double getCoafficient() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public ArrayList<Composant> getListComposants() {
+        return listComposants;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+    
+    
 }
