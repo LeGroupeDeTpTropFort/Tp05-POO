@@ -20,7 +20,7 @@ public class Entry {
         // TODO Test database connection
         
         SingletonConnect sg = new SingletonConnect();
-        
+        System.out.println("test");
     }
     
 }

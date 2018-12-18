@@ -15,11 +15,16 @@ import java.sql.Statement;
  * @author p1703136
  */
 public class SingletonConnect{
-    public static void connect(){
+    
+    public SingletonConnect(){ 
+        connect();
+    }
+    public void connect(){
       try{
           Class.forName("org.sqlite.JDCB").newInstance();
           Connection cnx = DriverManager.getConnection("jdcb:sqlite:baseTest.sqlite");
           Statement lien=cnx.createStatement();
+          System.out.println("reussite");
       } 
       catch(Exception e){
           System.out.println(e.getMessage());
