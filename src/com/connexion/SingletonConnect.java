@@ -21,13 +21,14 @@ public class SingletonConnect{
     }
     public void connect(){
       try{
-          Class.forName("org.sqlite.JDCB").newInstance();
-          Connection cnx = DriverManager.getConnection("jdcb:sqlite:baseTest.sqlite");
+          
+          Class.forName("org.sqlite.JDBC").newInstance();
+          Connection cnx = DriverManager.getConnection("baseTest.sqlite");
           Statement lien=cnx.createStatement();
           System.out.println("reussite");
       } 
       catch(Exception e){
-          System.out.println(e.getMessage());
+          System.out.println(e.toString());
       }
     }
 }
