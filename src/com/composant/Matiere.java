@@ -14,7 +14,12 @@ import java.util.ArrayList;
 public class Matiere extends Composant {
     double coefficient;
     ArrayList<Note> listeNotes;
-
+    
+    public Matiere(int id, String nom){
+        super(id, nom);
+        this.listeNotes = new ArrayList();
+    }
+    
     @Override
     public double calculMoyenne(int idEtudiant) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

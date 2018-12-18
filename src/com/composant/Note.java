@@ -13,4 +13,10 @@ public class Note {
     int idEdutiant;
     int idMatiere;
     double note;
+    
+    public Note(int idEtudiant, int idMatiere, double note){
+        this.idEdutiant = idEtudiant;
+        this.idMatiere = idMatiere;
+        this.note = note;
+    }
 }

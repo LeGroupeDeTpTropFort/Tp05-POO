@@ -13,6 +13,11 @@ public abstract class Composant {
     int id;
     String nom;
     
+    public Composant(int id , String nom){
+        this.id = id;
+        this.nom = nom;
+    }
+    
     abstract public double calculMoyenne(int idEtudiant);
     abstract public double getCoafficient();
 }

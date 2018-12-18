@@ -39,6 +39,15 @@ public class Entry {
             Logger.getLogger(Entry.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        resultats = sg.select("idModule, idEtudiant, note","notes");
+        try {
+            while(resultats.next()){
+                System.out.println(resultats.getDouble("note"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Entry.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }

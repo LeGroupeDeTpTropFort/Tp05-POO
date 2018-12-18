@@ -14,6 +14,12 @@ import java.util.ArrayList;
 public class Module extends Composant {
     ArrayList<Composant> listComposants;
 
+    public Module(int id, String nom){
+        super(id, nom);
+        this.listComposants = new ArrayList();
+    }
+    
+    
     @Override
     public double calculMoyenne(int idEtudiant) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
