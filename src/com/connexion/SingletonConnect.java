@@ -5,6 +5,11 @@
  */
 package com.connexion;
 
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
 /**
  *
  * @author p1703136
@@ -13,6 +18,8 @@ public class SingletonConnect{
     public static void connect(){
       try{
           Class.forName("org.dslite.JDCB").newInstance();
+          Connection cnx = DriverManager.getConnection("jdbc:sqlite:nomBD.sqlite/");
+          Statement lien=cnx.createStatement();
       } 
       catch(Exception e){
           System.out.println(e.getMessage());
