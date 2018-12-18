@@ -11,7 +11,17 @@ import java.util.ArrayList;
  *
  * @author Ayano
  */
-public class Matiere {
+public class Matiere extends Composant {
     double coefficient;
     ArrayList<Note> listeNotes;
+
+    @Override
+    public double calculMoyenne(int idEtudiant) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public double getCoafficient() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
