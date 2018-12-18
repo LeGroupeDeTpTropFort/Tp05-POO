@@ -13,4 +13,10 @@ public class Etudiant {
     int idEtudiant;
     String prenom;
     String nom;
+    
+    public Etudiant (int id, String prenom, String nom){
+       this.idEtudiant = id;
+       this.nom = nom;
+       this.prenom = prenom;
+    }
 }
